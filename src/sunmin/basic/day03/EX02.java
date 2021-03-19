@@ -22,12 +22,6 @@ public class EX02 {
 		System.out.println((4 < 6) || true && false || false && (2 > 3));
 		System.out.println(7 - (3 + 8 * 6 + 3) - (2 + 5 * 2));
 
-		// D + 1 + M % 2 / 3;
-		// 5.0 / 3 + 3 / 3;
-		// (53 % 21) < (45 / 18);
-		// (4 < 6) || true && false || false && (2 > 3);
-		// 7 - (3 + 8 * 6 + 3) - (2 + 5 * 2);
-
 		// 8.
 		System.out.print("May 13, 2021 fell on day number ");
 		System.out.println(
