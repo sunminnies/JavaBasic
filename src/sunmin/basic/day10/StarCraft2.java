@@ -1,24 +1,28 @@
-package sunmin.basic.day09;
+package sunmin.basic.day10;
 
 public class StarCraft2 {
     public static void main(String[] args) {
-        SCV s = new SCV();
+        // 인터페이스 기반으로 스타크래프트의 유닛을 정의해봄
+
+        SCV2 s = new SCV2();
+        System.out.println("SCV의 체력 " + s.hp);
+
         s.attack();
         s.move();
         s.specialAbility();
 
-        Marine m = new Marine();
+        Marine2 m = new Marine2();
         m.attack();
         m.move();
         m.specialAbility();
 
-        Firebat f = new Firebat();
+        Firebat2 f = new Firebat2();
         f.attack();
         f.move();
         f.specialAbility();
+
     }
 }
-
 abstract class Unit2 {
     protected String name;
     protected int hp;
@@ -28,15 +32,20 @@ abstract class Unit2 {
     protected int gas;
 
     public Unit2() { }
+
+//    abstract public void attack();
+//    abstract public void move();
+//    abstract public void specialAbility();
 }
 
-interface Function {
-    void attack();
+// 추상클래스에서 정의했던 추상 메서드를 독립적인 코드들로 분리함 -> 인터페이스
+interface Unit2Action {
+    void attack();  // abstract public 생략 가능
     void move();
     void specialAbility();
 }
 
-class SCV2 extends Unit2 implements Function {
+class SCV2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "융합절단기를 이용해서 대상에 %d의 피해를 주고 있습니다 \n";
     final String fmtmove = "지정한 위치로 %.2f의 속도로 이동중입니다 \n";
@@ -69,7 +78,7 @@ class SCV2 extends Unit2 implements Function {
     }
 }
 
-class Marine2 extends Unit2 implements Function{
+class Marine2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "가우스소총을 이용해서 대상에 %d의 피해를 주고 있습니다 \n";
     final String fmtmove = "지정한 위치로 %.2f의 속도로 이동중입니다 \n";
@@ -100,7 +109,7 @@ class Marine2 extends Unit2 implements Function{
     }
 }
 
-class Firebat2 extends Unit2 implements Function{
+class Firebat2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "화염방사기를 이용해서 대상에 %d의 피해를 주고 있습니다 \n";
     final String fmtmove = "지정한 위치로 %.2f의 속도로 이동중입니다 \n";
