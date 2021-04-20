@@ -18,10 +18,10 @@ public class HelloJDBC {
 
         // amazon 데이터베이스 접속 확인
         String drv = "org.mariadb.jdbc.Driver";
-        String amz = "bigdata.cq4bczprjf1l.ap-northeast-2.rds.amazonaws.com";
-        String url = "jdbc:mariadb://"+amz+":3306/bigdata";
-        String usr = "bigdata";
-        String pwd = "bigdata2020";
+        String amz
+        String url
+        String usr
+        String pwd
 
         // oracle용 drv, url (port:1521)
         // drv : oracle.jdbc.OracleDriver
@@ -50,8 +50,8 @@ public class HelloJDBC {
 
         // 3. vmware에 구축되어 있는 oracle 서버 접속 테스트
         String odrv = "oracle.jdbc.OracleDriver";
-        String ourl = "jdbc:oracle:thin:@192.168.184.129:1521/xe";
-        String ousr = "system";
+        String ourl
+        String ousr
 
         try {
             Class.forName(odrv);
@@ -70,8 +70,8 @@ public class HelloJDBC {
 
         // 3. vmware에 구축되어 있는 postgreSQL 서버 접속 테스트
         String pdrv = "org.postgresql.Driver";
-        String purl = "jdbc:postgresql://192.168.184.129:5432/postgres";
-        String pusr = "postgres";
+        String purl
+        String pusr
 
         try {
             Class.forName(pdrv);
