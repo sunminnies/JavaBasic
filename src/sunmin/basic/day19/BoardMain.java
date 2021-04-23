@@ -12,12 +12,13 @@ public class BoardMain {
         bsrv.readBoard();
 
         // 데이터 상세조회
-        bsrv.readOneBoard();
+        //bsrv.readOneBoard();
 
         // 데이터 수정
-
+        //bsrv.modifyBoard();
 
         // 데이터 삭제
+        bsrv.removeBoard();
 
     }
 }
